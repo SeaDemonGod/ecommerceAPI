@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 //adding environment requirement
-require.resolve('dotenv').config();
+require('dotenv').config();
 
 //connecting to database
 

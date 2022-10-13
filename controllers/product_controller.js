@@ -26,7 +26,7 @@ module.exports.create = async function(req,res){
             name: req.body.name,
             quantity: req.body.quantity,
         });
-        await Product.save();
+        await product.save();
         return res.status(200).json({
             data:{
                 message: "Product-created",
