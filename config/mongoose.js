@@ -1,0 +1,24 @@
+//require the library
+const mongoose = require('mongoose');
+
+//adding environment requirement
+require.resolve('dotenv').config();
+
+//connecting to database
+
+mongoose.connect(process.env.MONGO_CONNECT);
+
+//aquiring connection
+const db = mongoose.connection;
+
+// on error
+db.on('error',console.error.bind(console,'error connecting to db'));
+
+//on success
+db.once('open',function(){
+    console.log('Successfully connected to the database')
+})
+
+//exporting db
+module.exports=db;
+
